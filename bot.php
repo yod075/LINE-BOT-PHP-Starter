@@ -36,8 +36,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   //require_once ( 'templatelogin.php' );
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "button";
-  $arrPostData['messages'][0]['text'] = "กรุณาเข้าระบบ";
+  $arrPostData['messages'][0]['type'] = "template";
+  $arrPostData['messages'][0]['button'] = "";
   //$arrPostData['template'][0]['action'] = "OK";
 
 }
