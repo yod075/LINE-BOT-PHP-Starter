@@ -37,7 +37,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "template";
-  $arrPostData['button'][0]['text'] = "OK";
+  $arrPostBackData['button'][0]['text'] = "OK";
   //$arrPostData['template'][0]['action'] = "OK";
 
 }
