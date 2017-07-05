@@ -32,6 +32,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
   $arrPostData['messages'][0]['stickerId'] = "5";
+  $arrPostData['messages'][0]['stickerId'] = "3";
 }
 
 $ch = curl_init();
