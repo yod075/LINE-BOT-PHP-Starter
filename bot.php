@@ -33,12 +33,12 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['packageId'] = "1";
   $arrPostData['messages'][0]['stickerId'] = "3";
 }else{
-  //require_once ( 'templatelogin.php' );
+  require_once ( 'templatelogin.php' );
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "กรุณาเข้าระบบ";
-  //$arrPostData['template'][0][''] = "OK";
+  $arrPostData['template'][0][''] = "OK";
 
 }
 
