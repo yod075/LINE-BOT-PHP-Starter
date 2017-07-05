@@ -2,7 +2,7 @@
 
 
 
-interface templatelogin
+class templatelogin
 {
   "type": "template",
   "altText": "this is a confirm template",
