@@ -31,7 +31,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
-  $arrPostData['messages'][0]['stickerId'] = "RANDOM";
+  $arrPostData['messages'][0]['stickerId'] = "1"||$arrPostData['messages'][0]['stickerId'] = "2";
 }
 
 $ch = curl_init();
