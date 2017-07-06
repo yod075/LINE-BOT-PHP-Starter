@@ -28,7 +28,21 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
+  $textRand = rand(0,5);
+  if($textRand == 0){
   $arrPostData['messages'][0]['text'] = "หนู";
+  }else if($textRand == 1){
+	  $arrPostData['messages'][0]['text'] = "ตั้งให้หน่อย";
+  }else if($textRand == 2){
+	  $arrPostData['messages'][0]['text'] = "โตแล้วชื่อไรก็ได้";
+  }else if($textRand == 3){
+	  $arrPostData['messages'][0]['text'] = "ชื่อ...";
+  }
+else if($textRand == 4){
+	  $arrPostData['messages'][0]['text'] = "ไม่ตอบนะ";
+  }else {
+	  $arrPostData['messages'][0]['text'] = "ไปถามคนอื่นได้";
+  }
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
