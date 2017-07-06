@@ -16,6 +16,12 @@
  * under the License.
  */
 $access_token = 'gFj42cIxJjJO14XZXRXliXQSSA2fSnzjncY6dudRY8o/LVoHMXEVh0c1OpBEeI9rrHhZSUFX5g8N4BEz+++4zzaLYNAYpcA5jZI7+wB43Q0LxkynrkUlkRXvFO+Nyxu0z49PtyxKTFvrWLdnHtiETwdB04t89/1O/w1cDnyilFU=';
+
+
+$arrHeader = array();
+$arrHeader[] = "Content-Type: application/json";
+$arrHeader[] = "Authorization: Bearer {$access_token}";
+
 namespace LINE;
 
 use LINE\LINEBot\Event\Parser\EventRequestParser;
