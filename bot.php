@@ -75,10 +75,8 @@ else if($textRand == 4){
    $arrPostData['messages'][0]['stickerId'] = "78";
 }else if($stickerRand == 9){
    $arrPostData['messages'][0]['stickerId'] = "45";
-}else if($stickerRand == 10){
-   $arrPostData['messages'][0]['stickerId'] = "24";
 }else{
-   $arrPostData['messages'][0]['stickerId'] = "65";
+   $arrPostData['messages'][0]['stickerId'] = "24";
 }
 
 
