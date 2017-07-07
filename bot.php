@@ -40,6 +40,16 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
   $arrPostData['messages'][0]['stickerId'] = "3";
+  $stickerRand = rand(0,3);
+  if($stickerRand == 0){
+	  $arrPostData['messages'][0]['stickerId'] = "3";
+  }else if($stickerRand == 1){
+	  $arrPostData['messages'][0]['stickerId'] = "11";
+  }else if($stickerRand == 2){
+	  $arrPostData['messages'][0]['stickerId'] = "5";
+  }else{
+	 $arrPostData['messages'][0]['stickerId'] = "7";
+  }
 }
 
 
