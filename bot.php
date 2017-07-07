@@ -54,7 +54,7 @@ else if($textRand == 4){
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
   
-  $stickerRand = rand(0,10);
+  $stickerRand = rand(0,7);
   if($stickerRand == 0){
   $arrPostData['messages'][0]['stickerId'] = "3";
   }else if($stickerRand == 1){
@@ -68,16 +68,10 @@ else if($textRand == 4){
   }else if($stickerRand == 5) {
 	  $arrPostData['messages'][0]['stickerId'] = "5";
   }else if($stickerRand == 6){
-   $arrPostData['messages'][0]['stickerId'] = "20";
-}else if($stickerRand == 7){
-   $arrPostData['messages'][0]['stickerId'] = "29";
-}else if($stickerRand == 8){
-   $arrPostData['messages'][0]['stickerId'] = "78";
-}else if($stickerRand == 9){
-   $arrPostData['messages'][0]['stickerId'] = "45";
-}else{
-   $arrPostData['messages'][0]['stickerId'] = "24";
-}
+         $arrPostData['messages'][0]['stickerId'] = "20";
+  }else{
+         $arrPostData['messages'][0]['stickerId'] = "29";
+  }
 
 
 $ch = curl_init();
