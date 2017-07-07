@@ -29,11 +29,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
-}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+}else if($arrJson['events'][0]['message']['text'] == "แมวไง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";
-  $arrPostData['messages'][0]['previewImageUrl'] = "https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiT9syp8vbUAhWJKJQKHZYjASwQjRwIBw&url=http%3A%2F%2Fwww.cats.org.uk%2Fwhat-we-do&psig=AFQjCNENyRUiHD0asvR_ZJhLsLYap2MTiA&ust=1499507345612884";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss.jpg";
 	
 }else{
   $arrPostData = array();
