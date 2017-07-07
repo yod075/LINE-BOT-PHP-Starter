@@ -52,15 +52,15 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   }else if($stickerRand == 4){
 	  $arrPostData['messages'][0]['stickerId'] = "15";
   }else if($stickerRand == 5){
-	  $arrPostData['messages'][0]['stickerId'] = "20";
+	  $arrPostData['messages'][0]['stickerId'] = "1";
   }else if($stickerRand == 6){
 	  $arrPostData['messages'][0]['stickerId'] = "4";
   }else if($stickerRand == 7){
-	  $arrPostData['messages'][0]['stickerId'] = "22";
+	  $arrPostData['messages'][0]['stickerId'] = "9";
   }else if($stickerRand == 8){
 	  $arrPostData['messages'][0]['stickerId'] = "14";
   }else{
-	  $arrPostData['messages'][0]['stickerId'] = "19";
+	  $arrPostData['messages'][0]['stickerId'] = "12";
   }
 }
 
