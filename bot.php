@@ -30,10 +30,27 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "เข้าใจความหมายนะ แต่ไม่ตอบหรอก";
+  //$arrPostData = array();
+  //$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  //$arrPostData['messages'][0]['type'] = "text";
+  //$arrPostData['messages'][0]['text'] = "เข้าใจความหมายนะ แต่ไม่ตอบหรอก";
+	$post_data = [
+    'replyToken' => $replyToken,
+    'messages' => [
+      [
+        'type' => 'image',
+        'originalContentUrl' => 'https://raw.githubusercontent.com/kittinan/Sample-Line-Bot/master/images/beer.jpg',
+        'previewImageUrl' => 'https://raw.githubusercontent.com/kittinan/Sample-Line-Bot/master/images/beer_preview.jpg',
+      ],
+    ]
+  ];
+  
+  $response = $http->post($strUrl, json_encode($post_data));
+}
+	
+	
+	
+	
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
