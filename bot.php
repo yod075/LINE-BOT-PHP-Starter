@@ -39,21 +39,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
-  
-  $stickerRand = rand(0,5);
-  if($stickerRand  == 0){
-	  $arrPostData['messages'][0]['stickerId'] = "3";
-  }else if($stickerRand  == 1){
-	  $arrPostData['messages'][0]['stickerId'] = "11";
-  }else if($stickerRand  == 2){
-	 $arrPostData['messages'][0]['stickerId'] = "2";
-  }else if($stickerRand  == 3){
-	 $arrPostData['messages'][0]['stickerId'] = "9";
-  }else if($stickerRand  == 4){
-	  $arrPostData['messages'][0]['stickerId'] = "7";
-  }else{
-	 $arrPostData['messages'][0]['stickerId'] = "9";
-  }
+  $arrPostData['messages'][0]['stickerId'] = "3";
+}
 
 
 $ch = curl_init();
