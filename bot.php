@@ -30,26 +30,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
-  //$arrPostData = array();
-  //$arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  //$arrPostData['messages'][0]['type'] = "text";
-  //$arrPostData['messages'][0]['text'] = "เข้าใจความหมายนะ แต่ไม่ตอบหรอก";
-	$post_data = [
-    'replyToken' => $replyToken,
-    'messages' => [
-      [
-        'type' => 'image',
-        'originalContentUrl' => 'https://raw.githubusercontent.com/kittinan/Sample-Line-Bot/master/images/beer.jpg',
-        'previewImageUrl' => 'https://raw.githubusercontent.com/kittinan/Sample-Line-Bot/master/images/beer_preview.jpg',
-      ],
-    ]
-  ];
-  
-  $response = $http->post($strUrl, json_encode($post_data));
-}
-	
-	
-	
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "image";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiT9syp8vbUAhWJKJQKHZYjASwQjRwIBw&url=http%3A%2F%2Fwww.cats.org.uk%2Fwhat-we-do&psig=AFQjCNENyRUiHD0asvR_ZJhLsLYap2MTiA&ust=1499507345612884";
 	
 }else{
   $arrPostData = array();
