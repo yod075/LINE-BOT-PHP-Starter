@@ -38,8 +38,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else if($arrJson['events'][0]['message']['text'] == "เข้า"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  //$arrPostData['messages'][0]['type'] = "template";
-  $arrPostData['template'][0]['type'] = "confrim";
+  $arrPostData['messages'][0]['type'] = "template";
+  $arrPostData['message'][0]['altText'] = "confrim";
   $arrPostData['template'][0]['text'] = "login";
   $arrPostData['template'][0]['actions'] = 
   $arrPostData['message'][0]['type'] = "text",$arrPostData['message'][0]['label'] = "ok",$arrPostData['message'][0]['text'] = "ok",;
