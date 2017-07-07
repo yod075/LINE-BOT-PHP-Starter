@@ -33,8 +33,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";
-  $arrPostData['messages'][0]['previewImageUrl'] = "https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss.jpg";
-	
+  $arrPostData['messages'][0]['originalContentUrl'] = "https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss.jpg";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss_preview.jpg";	
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
