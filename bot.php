@@ -21,31 +21,29 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
+}else if($arrJson['events'][0]['message']['text'] == "ใช้งาน"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "template";
+  $arrPostData['messages'][0]['altText'] = "Login";
+  $arrPostData['messages'][0]['template']
+  {
+    $arrPostData['messages'][0]['type'] = "confirm";
+    $arrPostData['messages'][0]['text'] = "are you sure?";
+    $arrPostData['messages'][0]['actions']
+    {
+       $arrPostData['messages'][0]['type'] = "messages";
+       $arrPostData['messages'][0]['label'] = "OK";
+       $arrPostData['messages'][0]['text'] = "OK";
+    }
+  
+  }
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";
   $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss.jpg?raw=true';
   $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss_preview.jpg?raw=true';
-}else if($arrJson['events'][0]['message']['text'] == "เย้"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "template";{
-    $arrPostData['messages'][0]['type'] = "confirm",
-    $arrPostData['messages'][0]['text'] = "Are you sure?",
-    $arrPostBackData['messages'][0]['type'] = "actions"[
-          {
-            $arrPostBackData['messages'][0]['type'] = "label",
-            $arrPostBackData['messages'][0]['text'] = "Yes"
-          },
-          {
-            $arrPostBackData['messages'][0]['type'] = "label",
-            $arrPostBackData['messages'][0]['text'] = "No",
-          }
-      ]
-  }
-}
- 
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
