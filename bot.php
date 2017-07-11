@@ -11,25 +11,22 @@ $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$access_token}";
  
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['events'][0]['message']['text'] == "ดี"||$arrJson['events'][0]['message']['text'] == "ดีจ้า"||$arrJson['events'][0]['message']['text'] == "หวัดดี"
-  ||$arrJson['events'][0]['message']['text'] == "hi"||$arrJson['events'][0]['message']['text'] == "hello"){
+  ||$arrJson['events'][0]['message']['text'] == "Hi"||$arrJson['events'][0]['message']['text'] == "Hello"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $textRand = rand(0,3);
-  if($textRand == 0){
-	  $arrPostData['messages'][0]['text'] = "สวัสดีเราเอง";
-  }else if($textRand == 1){
-	  $arrPostData['messages'][0]['text'] = "ใครว่ะ";
-  }else if($textRand == 2){
-	  $arrPostData['messages'][0]['text'] = "ง่วง";
-  }else{
-	  $arrPostData['messages'][0]['text'] = "เฮ้อ";
-  }
+  $arrPostData['messages'][0]['text'] = "สวัสดีเราเอง";
 }else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"||$arrJson['events'][0]['message']['text'] == "ชื่อ"||$arrJson['events'][0]['message']['text'] == "ชื่อไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
+}else if($arrJson['events'][0]['message']['text'] == "ใช้งาน"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "buttons";
+  $arrPostData['messages'][0]['text'] = "OK";
+ 
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
