@@ -1,4 +1,3 @@
-	
 <?php
 $access_token = 'gFj42cIxJjJO14XZXRXliXQSSA2fSnzjncY6dudRY8o/LVoHMXEVh0c1OpBEeI9rrHhZSUFX5g8N4BEz+++4zzaLYNAYpcA5jZI7+wB43Q0LxkynrkUlkRXvFO+Nyxu0z49PtyxKTFvrWLdnHtiETwdB04t89/1O/w1cDnyilFU=';
  
@@ -26,9 +25,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "template";{
-    $arrPostData['messages'][0]['type'] = "confirm",
-    $arrPostData['messages'][0]['text'] = "Are you sure?",
-    $arrPostData['messages'][0]['type'] = "actions"[
+  $arrPostData['messages'][0]['type'] = "confirm",
+  $arrPostData['messages'][0]['text'] = "Are you sure?",
+  $arrPostData['messages'][0]['type'] = "actions"[
           {
             $arrPostData['messages'][0]['type'] = "label",
             $arrPostData['messages'][0]['text'] = "Yes"
@@ -39,7 +38,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
           }
       ]
   }
-}
  
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
@@ -55,25 +53,25 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['stickerId'] = "3";
   $stickerRand = rand(0,9);
   if($stickerRand == 0){
-	  $arrPostData['messages'][0]['stickerId'] = "3";
+    $arrPostData['messages'][0]['stickerId'] = "3";
   }else if($stickerRand == 1){
-	  $arrPostData['messages'][0]['stickerId'] = "11";
+    $arrPostData['messages'][0]['stickerId'] = "11";
   }else if($stickerRand == 2){
-	  $arrPostData['messages'][0]['stickerId'] = "5";
+    $arrPostData['messages'][0]['stickerId'] = "5";
   }else if($stickerRand == 3){
-	 $arrPostData['messages'][0]['stickerId'] = "7";
+   $arrPostData['messages'][0]['stickerId'] = "7";
   }else if($stickerRand == 4){
-	  $arrPostData['messages'][0]['stickerId'] = "2";
+    $arrPostData['messages'][0]['stickerId'] = "2";
   }else if($stickerRand == 5){
-	  $arrPostData['messages'][0]['stickerId'] = "1";
+    $arrPostData['messages'][0]['stickerId'] = "1";
   }else if($stickerRand == 6){
-	  $arrPostData['messages'][0]['stickerId'] = "4";
+    $arrPostData['messages'][0]['stickerId'] = "4";
   }else if($stickerRand == 7){
-	  $arrPostData['messages'][0]['stickerId'] = "9";
+    $arrPostData['messages'][0]['stickerId'] = "9";
   }else if($stickerRand == 8){
-	  $arrPostData['messages'][0]['stickerId'] = "5";
+    $arrPostData['messages'][0]['stickerId'] = "5";
   }else{
-	  $arrPostData['messages'][0]['stickerId'] = "6";
+    $arrPostData['messages'][0]['stickerId'] = "6";
   }
 }
 
