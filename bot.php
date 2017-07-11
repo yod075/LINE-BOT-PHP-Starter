@@ -16,11 +16,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดีเราเอง";
-}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"||$arrJson['events'][0]['message']['text'] == "ชื่อ"||$arrJson['events'][0]['message']['text'] == "ชื่อไร"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "หนู";
 }else if($arrJson['events'][0]['message']['text'] == "ใช้งาน"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
