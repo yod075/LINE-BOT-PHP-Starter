@@ -30,9 +30,20 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
 }else if($arrJson['events'][0]['message']['text'] == "เย้"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "template";
-  $arrPostData['messages'][0]['text'] = "OK";
- 
+  $arrPostData['messages'][0]['type'] = "template";{
+    $arrPostData['messages'][0]['type'] = "confirm",
+    $arrPostData['messages'][0]['text'] = "Are you sure?",
+    $arrPostBackData['messages'][0]['type'] = "actions"[
+          {
+            $arrPostBackData['messages'][0]['type'] = "label",
+            $arrPostBackData['messages'][0]['text'] = "Yes"
+          },
+          {
+            $arrPostBackData['messages'][0]['type'] = "label",
+            $arrPostBackData['messages'][0]['text'] = "No",
+          }
+      ]
+  }
  
 }else{
   $arrPostData = array();
