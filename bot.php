@@ -36,7 +36,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
     {
        $arrPostData['messages'][0]['type'] = "postback";
        $arrPostData['messages'][0]['label'] = "OK";
-       $arrPostData['messages'][0]['data'] = ""action=OK";
+       $arrPostData['messages'][0]['data'] = "action=OK";
     }
   
   }
