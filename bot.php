@@ -1,7 +1,3 @@
-<!DOCTYPE HTML>  
-<html>
-<body> 	
-	
 	
 <?php
 $access_token = 'gFj42cIxJjJO14XZXRXliXQSSA2fSnzjncY6dudRY8o/LVoHMXEVh0c1OpBEeI9rrHhZSUFX5g8N4BEz+++4zzaLYNAYpcA5jZI7+wB43Q0LxkynrkUlkRXvFO+Nyxu0z49PtyxKTFvrWLdnHtiETwdB04t89/1O/w1cDnyilFU=';
@@ -30,18 +26,16 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "template";{
-      "type": "confirm",
-      "text": "Are you sure?",
-      "actions": [
+    $arrPostData['messages'][0]['type'] = "confirm",
+    $arrPostData['messages'][0]['text'] = "Are you sure?",
+    $arrPostData['messages'][0]['type'] = "actions"[
           {
-            "type": "message",
-            "label": "Yes",
-            "text": "yes"
+            $arrPostData['messages'][0]['type'] = "label",
+            $arrPostData['messages'][0]['text'] = "Yes"
           },
           {
-            "type": "message",
-            "label": "No",
-            "text": "no"
+            $arrPostData['messages'][0]['type'] = "label",
+            $arrPostData['messages'][0]['text'] = "No",
           }
       ]
   }
@@ -96,9 +90,3 @@ $result = curl_exec($ch);
 curl_close ($ch);
 echo "Dee ja";
 ?>
-
-<h3>Login</h>	
-<input type="submit" name="submit" value="Submit"> 	
-	
-</body>
-</html>
