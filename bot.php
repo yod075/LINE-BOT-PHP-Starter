@@ -44,6 +44,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
           }
       ]
   }
+}
  
 }else{
   $arrPostData = array();
