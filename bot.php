@@ -24,8 +24,23 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
 }else if($arrJson['events'][0]['message']['text'] == "ใช้งาน"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "buttons";
-  $arrPostData['messages'][0]['text'] = "OK";
+  $arrPostData['messages'][0]['type'] = "template";{
+      "type": "confirm",
+      "text": "Are you sure?",
+      "actions": [
+          {
+            "type": "message",
+            "label": "Yes",
+            "text": "yes"
+          },
+          {
+            "type": "message",
+            "label": "No",
+            "text": "no"
+          }
+      ]
+  }
+}
  
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
