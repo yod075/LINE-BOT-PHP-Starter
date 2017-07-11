@@ -28,13 +28,15 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['altText'] = "Login";
   $arrPostData['messages'][0]['template']
   {
-    $arrPostData['messages'][0]['type'] = "confirm";
-    $arrPostData['messages'][0]['text'] = "are you sure?";
+    $arrPostData['messages'][0]['type'] = "buttons";
+    $arrPostData['messages'][0]['thumbnailImageUrl'] = "https://example.com/bot/images/image.jpg";
+    $arrPostData['messages'][0]['title'] = "Menu";
+    $arrPostData['messages'][0]['text'] = "choose";
     $arrPostData['messages'][0]['actions']
     {
-       $arrPostData['messages'][0]['type'] = "messages";
+       $arrPostData['messages'][0]['type'] = "postback";
        $arrPostData['messages'][0]['label'] = "OK";
-       $arrPostData['messages'][0]['text'] = "OK";
+       $arrPostData['messages'][0]['data'] = ""action=OK";
     }
   
   }
