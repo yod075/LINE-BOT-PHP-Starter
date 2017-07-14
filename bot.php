@@ -38,10 +38,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "my location";
-  $arrPostData['messages'][0]['address'] = "Bangkok, Thailand";
-  $arrPostData['messages'][0]['latitude'] = "35.65910807942215";
-  $arrPostData['messages'][0]['longitude'] = "139.70372892916203";
+  $arrPostData['messages'][0]['title'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ";
+  $arrPostData['messages'][0]['address'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ, สุขุมวิท 23, แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพ, 10110";
+  $arrPostData['messages'][0]['latitude'] = "13.745430";
+  $arrPostData['messages'][0]['longitude'] = "100.565264";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
