@@ -21,25 +21,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
-}else if($arrJson['events'][0]['message']['text'] == "ใช้งาน"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "template";
-  $arrPostData['messages'][0]['altText'] = "Login";
-  $arrPostData['messages'][0]['template']
-  {
-    $arrPostData['messages'][0]['type'] = "buttons";
-    $arrPostData['messages'][0]['thumbnailImageUrl'] = "https://example.com/bot/images/image.jpg";
-    $arrPostData['messages'][0]['title'] = "Menu";
-    $arrPostData['messages'][0]['text'] = "choose";
-    $arrPostData['messages'][0]['actions']
-    {
-       $arrPostData['messages'][0]['type'] = "postback";
-       $arrPostData['messages'][0]['label'] = "OK";
-       $arrPostData['messages'][0]['data'] = "action=OK";
-    }
-  
-  }
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -51,7 +32,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
-  $arrPostData['messages'][0]['stickerId'] = "3";
   $stickerRand = rand(0,9);
   if($stickerRand == 0){
     $arrPostData['messages'][0]['stickerId'] = "3";
