@@ -40,8 +40,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['type'] = "location";
   $arrPostData['messages'][0]['title'] = "my location";
   $arrPostData['messages'][0]['address'] = "Bangkok, Thailand";
-  $arrPostData['messages'][0]['latitude'] = '35.65910807942215';
-  $arrPostData['messages'][0]['longtitude'] = '139.70372892916203';
+  $arrPostData['messages'][0]['latitude'] = "35.65910807942215";
+  $arrPostData['messages'][0]['longtitude'] = "139.70372892916203";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
