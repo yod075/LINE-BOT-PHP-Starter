@@ -39,7 +39,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "location";
   $arrPostData['messages'][0]['titile'] = "my location";
-  $arrPostData['messages'][0]['address'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ";
+  $arrPostData['messages'][0]['text'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ";
   $arrPostData['messages'][0]['latitude'] = "13.745430",
   $arrPostData['messages'][0]['longitude'] = "100.565264"
 }else{
