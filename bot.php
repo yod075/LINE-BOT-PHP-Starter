@@ -21,12 +21,19 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "หนู";
-}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+}else if($arrJson['events'][0]['message']['text'] == "แมวไง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";
   $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss.jpg?raw=true';
   $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss_preview.jpg?raw=true';
+}else if($arrJson['events'][0]['message']['text'] == "หิวจัง"||$arrJson['events'][0]['message']['text'] == "มีไรกิน"||$arrJson['events'][0]['message']['text'] == "หิว"||$arrJson['events'][0]['message']['text'] == "หิวแล้ว"
+  |$arrJson['events'][0]['message']['text'] == "ของกิน"||$arrJson['events'][0]['message']['text'] == "อาหาร"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "image";
+  $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi.jpg?raw=true';
+  $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi_preview.jpg?raw=true';
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
