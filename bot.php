@@ -34,6 +34,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['type'] = "image";
   $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi.jpg?raw=true';
   $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi_preview.jpg?raw=true';
+}else if($arrJson['events'][0]['message']['text'] == "location"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "location";
+  $arrPostData['messages'][0]['title'] = "my location";
+  $arrPostData['messages'][0]['address'] = "Bangkok, Thailand";
+  $arrPostData['messages'][0]['latitude'] = 35.65910807942215;
+  $arrPostData['messages'][0]['longtitude'] = 139.70372892916203;
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
