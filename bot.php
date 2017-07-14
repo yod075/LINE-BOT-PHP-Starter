@@ -34,6 +34,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['type'] = "image";
   $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi.jpg?raw=true';
   $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi_preview.jpg?raw=true';
+}else if($arrJson['events'][0]['message']['text'] == "swu"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "location";
+  $arrPostData['messages'][0]['titile'] = 'my location';
+  $arrPostData['messages'][0]['address'] = ' มหาวิทยาลัยศรีนครินทรวิโรฒ, สุขุมวิท 23, แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพ, 10110 10110';
+  $arrPostData['messages'][0]['latitude'] = '13.745430';
+  $arrPostData['messages'][0]['longitude'] = '100.565264';
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
