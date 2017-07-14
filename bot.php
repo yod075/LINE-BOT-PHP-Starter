@@ -28,13 +28,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss.jpg?raw=true';
   $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/grief-and-loss_preview.jpg?raw=true';
 }else if($arrJson['events'][0]['message']['text'] == "หิวจัง"||$arrJson['events'][0]['message']['text'] == "มีไรกิน"||$arrJson['events'][0]['message']['text'] == "หิว"||$arrJson['events'][0]['message']['text'] == "หิวแล้ว"
-  |$arrJson['events'][0]['message']['text'] == "ของกิน"||$arrJson['events'][0]['message']['text'] == "อาหาร"){
+  ||$arrJson['events'][0]['message']['text'] == "ของกิน"||$arrJson['events'][0]['message']['text'] == "อาหาร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";
   $arrPostData['messages'][0]['originalContentUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi.jpg?raw=true';
   $arrPostData['messages'][0]['previewImageUrl'] = 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/su||$arrJson['events'][0]['message']['text'] == "ชื่อ"shi_preview.jpg?raw=true';
-}else if($arrJson['events'][0]['message']['text'] == "มศว" ||$arrJson['events'][0]['message']['text'] == "swu" ||$arrJson['events'][0]['message']['text'] == "ที่อยู่" ||$arrJson['events'][0]['message']['text'] == "Location"){
+}else if($arrJson['events'][0]['message']['text'] == "มศว"||$arrJson['events'][0]['message']['text'] == "swu" 
+  ||$arrJson['events'][0]['message']['text'] == "ที่อยู่"||$arrJson['events'][0]['message']['text'] == "Location"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "location";
