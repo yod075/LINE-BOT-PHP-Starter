@@ -43,6 +43,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['address'] = "สุขุมวิท 23, แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพ, 10110";
   $arrPostData['messages'][0]['latitude'] = "13.745430";
   $arrPostData['messages'][0]['longitude'] = "100.565264";
+}else if($arrJson['events'][0]['message']['text'] == "1122"){
+  $arrPostData = array( New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
+  New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans=N")
+);
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
