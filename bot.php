@@ -50,7 +50,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
 }else if($arrJson['events'][0]['message']['text'] == "เข้าสู่ระบบ"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['template'] = "confirm";
+  $arrPostData['template'][0]['type'] = "confirm";
 
  
 }else{
