@@ -52,7 +52,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['template'][0]['type'] = "confirm";
   $arrPostData['template'][0]['text'] = "yes";
-  $arrPostData['actions'] = $arrJson['events'][0]['actions'];
   $arrPostData['action'][0]['label'] = "yes";
  
 }else{
