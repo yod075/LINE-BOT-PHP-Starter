@@ -51,8 +51,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['template'][0]['type'] = "confirm";
-  $arrPostData['template'][0]['label'] = "yes";
-  $arrPostData['template'][0]['label'] = "no";
+  $arrPostData['template'][0]['title'] = "yes";
  
 }else{
   $arrPostData = array();
