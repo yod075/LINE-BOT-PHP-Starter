@@ -47,8 +47,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "confirm";
   $arrPostData['messages'][0]['title'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ";
-  $arrPostData['actions'][0]['type'] = "message";
-  $arrPostData['actions'][0]['label'] = "yes";
 
 }else{
   $arrPostData = array();
