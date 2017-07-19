@@ -9,102 +9,7 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$access_token}";
-   $text = $this->textMessage->getText();
-        $replyToken = $this->textMessage->getReplyToken();
-        $this->logger->info("Got text message from $replyToken: $text");
-        switch ($text) {
-            case 'profile':
-                $userId = $this->textMessage->getUserId();
-                $this->sendProfile($replyToken, $userId);
-                break;
-            case 'bye':
-                if ($this->textMessage->isRoomEvent()) {
-                    $this->bot->replyText($replyToken, 'Leaving room');
-                    $this->bot->leaveRoom($this->textMessage->getRoomId());
-                    break;
-                }
-                if ($this->textMessage->isGroupEvent()) {
-                    $this->bot->replyText($replyToken, 'Leaving group');
-                    $this->bot->leaveGroup($this->textMessage->getGroupId());
-                    break;
-                }
-                $this->bot->replyText($replyToken, 'Bot cannot leave from 1:1 chat');
-                break;
-            case 'confirm':
-                $this->bot->replyMessage(
-                    $replyToken,
-                    new TemplateMessageBuilder(
-                        'Confirm alt text',
-                        new ConfirmTemplateBuilder('Do it?', [
-                            new MessageTemplateActionBuilder('Yes', 'Yes!'),
-                            new MessageTemplateActionBuilder('No', 'No!'),
-                        ])
-                    )
-                );
-                break;
-            case 'buttons':
-                $imageUrl = UrlBuilder::buildUrl($this->req, ['static', 'buttons', '1040.jpg']);
-                $buttonTemplateBuilder = new ButtonTemplateBuilder(
-                    'My button sample',
-                    'Hello my button',
-                    $imageUrl,
-                    [
-                        new UriTemplateActionBuilder('Go to line.me', 'https://line.me'),
-                        new PostbackTemplateActionBuilder('Buy', 'action=buy&itemid=123'),
-                        new PostbackTemplateActionBuilder('Add to cart', 'action=add&itemid=123'),
-                        new MessageTemplateActionBuilder('Say message', 'hello hello'),
-                    ]
-                );
-                $templateMessage = new TemplateMessageBuilder('Button alt text', $buttonTemplateBuilder);
-                $this->bot->replyMessage($replyToken, $templateMessage);
-                break;
-            case 'carousel':
-                $imageUrl = UrlBuilder::buildUrl($this->req, ['static', 'buttons', '1040.jpg']);
-                $carouselTemplateBuilder = new CarouselTemplateBuilder([
-                    new CarouselColumnTemplateBuilder('foo', 'bar', $imageUrl, [
-                        new UriTemplateActionBuilder('Go to line.me', 'https://line.me'),
-                        new PostbackTemplateActionBuilder('Buy', 'action=buy&itemid=123'),
-                    ]),
-                    new CarouselColumnTemplateBuilder('buz', 'qux', $imageUrl, [
-                        new PostbackTemplateActionBuilder('Add to cart', 'action=add&itemid=123'),
-                        new MessageTemplateActionBuilder('Say message', 'hello hello'),
-                    ]),
-                ]);
-                $templateMessage = new TemplateMessageBuilder('Button alt text', $carouselTemplateBuilder);
-                $this->bot->replyMessage($replyToken, $templateMessage);
-                break;
-            case 'imagemap':
-                $richMessageUrl = UrlBuilder::buildUrl($this->req, ['static', 'rich']);
-                $imagemapMessageBuilder = new ImagemapMessageBuilder(
-                    $richMessageUrl,
-                    'This is alt text',
-                    new BaseSizeBuilder(1040, 1040),
-                    [
-                        new ImagemapUriActionBuilder(
-                            'https://store.line.me/family/manga/en',
-                            new AreaBuilder(0, 0, 520, 520)
-                        ),
-                        new ImagemapUriActionBuilder(
-                            'https://store.line.me/family/music/en',
-                            new AreaBuilder(520, 0, 520, 520)
-                        ),
-                        new ImagemapUriActionBuilder(
-                            'https://store.line.me/family/play/en',
-                            new AreaBuilder(0, 520, 520, 520)
-                        ),
-                        new ImagemapMessageActionBuilder(
-                            'URANAI!',
-                            new AreaBuilder(520, 520, 520, 520)
-                        )
-                    ]
-                );
-                $this->bot->replyMessage($replyToken, $imagemapMessageBuilder);
-                break;
-            default:
-                $this->echoBack($replyToken, $text);
-                break;
-        }
-/*if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['events'][0]['message']['text'] == "ดี"||$arrJson['events'][0]['message']['text'] == "ดีจ้า"||$arrJson['events'][0]['message']['text'] == "หวัดดี"
+if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['events'][0]['message']['text'] == "ดี"||$arrJson['events'][0]['message']['text'] == "ดีจ้า"||$arrJson['events'][0]['message']['text'] == "หวัดดี"
   ||$arrJson['events'][0]['message']['text'] == "Hi"||$arrJson['events'][0]['message']['text'] == "Hello"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -137,10 +42,6 @@ $arrHeader[] = "Authorization: Bearer {$access_token}";
   $arrPostData['messages'][0]['address'] = "สุขุมวิท 23, แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพ, 10110";
   $arrPostData['messages'][0]['latitude'] = "13.745430";
   $arrPostData['messages'][0]['longitude'] = "100.565264";
-/*}else if($arrJson['events'][0]['message']['text'] == "อิอิ"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
- $arrPostData['messages'][0]['type'] = "confirm"; 
 }else if($arrJson['events'][0]['message']['text'] == "เข้าสู่ระบบ"){
  $arrPostData = array();
  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -173,7 +74,7 @@ $arrHeader[] = "Authorization: Bearer {$access_token}";
   }else{
     $arrPostData['messages'][0]['stickerId'] = "6";
   }
-}*/
+}
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
