@@ -48,11 +48,12 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
  $arrPostData['messages'][0]['type'] = "confirm"; */
 }else if($arrJson['events'][0]['message']['text'] == "เข้าสู่ระบบ"){
-  $arrPostData = array();
+  $arrPostData = array($actions);
+  $actions = array (
+  New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
+  New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans=N")
+);
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['template'][0]['type'] = "confirm";
-  $arrPostData['template'][0]['text'] = "yes";
-  $arrPostData['action'][0]['label'] = "yes";
  
 }else{
   $arrPostData = array();
