@@ -43,7 +43,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['latitude'] = "13.745430";
   $arrPostData['messages'][0]['longitude'] = "100.565264";
 }else if($arrJson['events'][0]['message']['text'] == "login"){
-  $arrPostData = array();
+  $arrPostData = array("yes","no");
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "confirm";
   $arrPostData['messages'][0]['title'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ";
