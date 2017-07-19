@@ -40,7 +40,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
   $arrPostData['messages'][0]['type'] = "location";
   $arrPostData['messages'][0]['title'] = "มหาวิทยาลัยศรีนครินทรวิโรฒ";
   $arrPostData['messages'][0]['address'] = "สุขุมวิท 23, แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพ, 10110";
-  $arrPostData['messages'][0]['latitude'] = "13.745430";
+ // $arrPostData['messages'][0]['latitude'] = "13.745430";
   $arrPostData['messages'][0]['longitude'] = "100.565264";
 }else if($arrJson['events'][0]['message']['text'] == "เข้าสู่ระบบ"){
  $arrPostData = array();
