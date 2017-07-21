@@ -30,8 +30,8 @@ foreach ($json['events'] as $event) {
     'messages' => [
       [
         'type' => 'image',
-        'originalContentUrl' => 'https://raw.githubusercontent.com/kittinan/Sample-Line-Bot/master/images/sushi.jpg',
-        'previewImageUrl' => 'https://raw.githubusercontent.com/kittinan/Sample-Line-Bot/master/images/sushi_preview.jpg',
+        'originalContentUrl' => 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi.jpg?raw=true',
+        'previewImageUrl' => 'https://github.com/swunews/LINE-BOT-PHP-Starter/blob/master/sushi_preview.jpg?raw=true',
       ],
     ]
   ];
