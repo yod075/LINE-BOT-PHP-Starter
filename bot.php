@@ -5,10 +5,10 @@ require_once './vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 setlocale(LC_CTYPE, "en_US.UTF-8");
 $configs = Yaml::parse(file_get_contents('./config.yml'));
-if (empty($configs) || empty($configs['channel_token'])) {
+if (empty($configs) || empty($configs['access_token'])) {
   return;
 }
-$channel_token = $configs['channel_token'];
+$access_token = $configs['access_token'];
 $body = file_get_contents('php://input');
 $json = json_decode($body, true);
 if (empty($json)) {
@@ -17,7 +17,7 @@ if (empty($json)) {
 $url = 'https://api.line.me/v2/bot/message/reply';
 $headers = [
   'Content-Type:application/json',
-  'Authorization: Bearer ' . $channel_token,
+  'Authorization: Bearer ' . $access_token,
 ];
 $http = new \KS\HTTP\HTTP();
 $http->setHeaders($headers);
