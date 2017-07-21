@@ -50,9 +50,18 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"||$arrJson['e
 }else if($arrJson['events'][0]['message']['text'] == "เข้าสู่ระบบ"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['template'][0]['type'] = "confirm";
-  $arrPostData['template'][0]['text'] = "yes";
- 
+  $arrPostData['message'][0]['type'] = "template";
+  $arrPostData['message'][0]['altText'] = "this is a confirm template";
+  $arrPostData['message'][0]['template'] = { $arrPostData['message'][0]['type'] = "confirm";
+                                             $arrPostData['message'][0]['text'] = "Are you sure?";
+                                             $arrPostData['message'][0]['actions'] = [{$arrPostData['message'][0]['type'] = "message";
+                                                                                      $arrPostData['message'][0]['label'] = "Yes";
+                                                                                      $arrPostData['message'][0]['text'] = "yes";},
+                                                                                      {$arrPostData['message'][0]['type'] = "message";
+                                                                                      $arrPostData['message'][0]['label'] = "No";
+                                                                                      $arrPostData['message'][0]['text'] = "no";}
+                                                                                     ]
+                                           }
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
